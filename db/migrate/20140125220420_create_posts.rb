@@ -5,7 +5,8 @@ class CreatePosts < ActiveRecord::Migration
       t.string :description
       t.float :price
       t.string :address
-      t.integer :user_id
+      t.integer :donor_id
+      t.integer :artist_id
       t.integer :keyword
 
       t.timestamps
