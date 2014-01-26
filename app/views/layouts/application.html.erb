@@ -3,11 +3,12 @@
 <head>
   <title>Good4Art</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+  <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: 'fa fa-sign-out' %>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
   <%= yield %>
