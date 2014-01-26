@@ -151,3 +151,12 @@ a.unclaimed:hover{
 }
 .post-image-div{
 }
+.row{
+  padding-right: 10px;
+  padding-left: 10px;
+}
+@media (max-width: 516px){
+  .hide-link{
+    display: none;
+  }
+}

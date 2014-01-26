@@ -12,7 +12,7 @@
         <%= link_to "Dib It!", claim_path(@post), class: "unclaimed" %>
       <% elsif @post.artist_id == current_user.id %>
         You've Claimed It!<br />
-        <%= link_to "Undib It Junk!", claim_path(@post), class: "claimed" %>
+        <%= link_to "Undib Your Junk!", claim_path(@post), class: "claimed" %>
       <% end %>
     </div>
   <% end %>
