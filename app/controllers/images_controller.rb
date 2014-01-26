@@ -1,5 +1,6 @@
 class ImagesController < ApplicationController
   before_action :set_image, only: [:show, :edit, :update, :destroy]
+  before_action :find_post, only: [:create, :new, :create, :update]
 
   # GET /images
   # GET /images.json
@@ -14,7 +15,7 @@ class ImagesController < ApplicationController
 
   # GET /images/new
   def new
-    @image = Image.new
+    @image = @post.images.build
   end
 
   # GET /images/1/edit
@@ -24,11 +25,10 @@ class ImagesController < ApplicationController
   # POST /images
   # POST /images.json
   def create
-    @image = Image.new(image_params)
-
+    @image = @post.images.build(image_params)
     respond_to do |format|
       if @image.save
-        format.html { redirect_to @image, notice: 'Image was successfully created.' }
+        format.html { redirect_to @post, notice: 'Image was successfully created.' }
         format.json { render action: 'show', status: :created, location: @image }
       else
         format.html { render action: 'new' }
@@ -70,5 +70,9 @@ class ImagesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def image_params
       params.require(:image).permit(:pic_file_name, :pic, :description, :post_id)
+    end
+
+    def find_post
+      @post = Post.find(params[:post_id])
     end
 end

@@ -1,2 +1,5 @@
 class Post < ActiveRecord::Base
+  has_many :images
+  belongs_to :user
+  has_one :keyword
 end
