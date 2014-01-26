@@ -1,5 +1,10 @@
 * { margin: 0; padding: 0; }
-html {  } /* for rems */
+html {  
+  min-height: 100%;
+  height: 100%;
+  margin: 0;
+  background-size: auto 100%;
+} /* for rems */
 
 
 h1 { font: bold 3.0rem Helvetica, Arial, sans-serif; margin: 0 0 0.5em; }
@@ -14,8 +19,26 @@ body {
   font-family: Helvetica, Arial, sans-serif; 
   color: #333; 
   background: #e8ecf0 url(denim2.png) no-repeat 50% 350px;
+  margin: 0;
+  background-size: auto 100%;
+  min-height: 100%;
+  height: 100%;
+  margin: 0;
+  background-size: auto 100%;
 }
-
+footer{
+  margin: -25px 0px 0px 5px;
+  height: 25px;
+  clear: both;
+  color: #000;
+  text-align: center;
+}
+#wrap,#wrap-splash{
+  margin-bottom: -25px;
+  min-height: 100%;
+  min-width: 680px;
+  width: 100%;
+}
 p, ol, ul, td {
   line-height: 18px;
 }
@@ -151,6 +174,7 @@ a.unclaimed:hover{
 }
 .post-image-div{
 }
+
 .row{
   padding-right: 10px;
   padding-left: 10px;
