@@ -1,10 +1,10 @@
 <div class="row">
   <% if current_user.id == @post.donor_id %>
     <div class="right small-4 columns">
-      <%= link_to "Add Image", new_post_image_path(@post), class: "fa fa-plus" %>
+      <%= link_to "Image", new_post_image_path(@post), class: "fa fa-plus line-space" %>
       <%= link_to 'Edit', edit_post_path(@post), class: "fa fa-pencil" %> 
-      <%= link_to 'Back', posts_path, class: "fa fa-arrow-left" %>
-    </div>
+<!--       <%= link_to 'Back', posts_path, class: "fa fa-arrow-left" %>
+ -->    </div>
   <% end %>
   <% if current_user.id != @post.donor_id && (@post.artist_id == nil || @post.artist_id == current_user.id) %>
     <div class="right small-4 columns claim" >
@@ -16,7 +16,7 @@
       <% end %>
     </div>
   <% end %>
-  <div class="post small-12 columns">
+  <div class="post small-10 columns">
     <div class="post-title">
         <%= @post.title %>
     </div>
