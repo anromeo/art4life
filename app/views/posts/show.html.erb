@@ -1,5 +1,5 @@
 <div class="row">
-  <% if current_user.id == @post.donor_id %>
+  <% if current_user && current_user.id == @post.donor_id %>
     <div class="right small-4 columns">
       <%= link_to "Image", new_post_image_path(@post), class: "fa fa-plus line-space" %>
       <%= link_to 'Edit', edit_post_path(@post), class: "fa fa-pencil" %> 
@@ -14,7 +14,7 @@
 	<% if !@post.artist_id %>
 		<div class="post-address"><%= @post.address %> <a href="http://maps.google.com/?q=<%= @post.address %>" target="_blank" class="fa fa-map-marker" title="View on map"> </a></div>
   <% end %>
-  <% if current_user.id != @post.donor_id && (@post.artist_id == nil || @post.artist_id == current_user.id) %>
+  <% if current_user && current_user.id != @post.donor_id && (@post.artist_id == nil || @post.artist_id == current_user.id) %>
     <div class="claim" >
       <% if @post.artist_id == nil %>
         <%= link_to "Dibs!", claim_path(@post), class: "unclaimed" %>
