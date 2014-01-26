@@ -150,7 +150,11 @@ a.unclaimed:hover{
 }
 .post-image-div{
 }
-@media (max-width: 510px){
+.row{
+  padding-right: 10px;
+  padding-left: 10px;
+}
+@media (max-width: 516px){
   .hide-link{
     display: none;
   }

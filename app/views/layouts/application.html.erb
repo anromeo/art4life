@@ -30,7 +30,7 @@
         <ul class="title-area">
           <li class="name small-offset-2 columns 2">
             <h1 id="nav-title">
-              <a href="/"><%= image_tag "logo.png", width: "190px" %></a>
+              <a href="/"><%= image_tag "logo.png", width: "190px", id: "logo" %></a>
             </h1>
           </li>
         </ul>
@@ -51,11 +51,9 @@
                   </span>
                 </a>
               <% else %>
-                <a class='nav-link fa fa-sign-out'>
-                  <span class="hide-link">
-                    Sign Out
-                  </span>
-                </a>
+                <%= link_to destroy_user_session_path, class: 'nav-link fa fa-sign-out', method: :delete do %>
+                  <span class='hide-link'>Sign Out</span>
+                <% end %>
               <% end %>
             </li>
           </ul>
