@@ -7,7 +7,7 @@ class CreatePosts < ActiveRecord::Migration
       t.string :address
       t.integer :donor_id
       t.integer :artist_id
-      t.integer :keyword
+      t.string :keyword
 
       t.timestamps
     end
