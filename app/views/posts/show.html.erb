@@ -3,8 +3,19 @@
     <div class="right small-4 columns">
       <%= link_to "Add Image", new_post_image_path(@post), class: "fa fa-plus" %>
       <%= link_to 'Edit', edit_post_path(@post), class: "fa fa-pencil" %> 
-      <%= link_to 'Back', posts_path, class: "fa fa-arrow-left" %>    </div>
-    <% end %>
+      <%= link_to 'Back', posts_path, class: "fa fa-arrow-left" %>
+    </div>
+  <% end %>
+  <% if current_user.id != @post.donor_id && (@post.artist_id == nil || @post.artist_id == current_user.id) %>
+    <div class="right small-4 columns claim" >
+      <% if @post.artist_id == nil %>
+        <%= link_to "Claim Junk!", claim_path(@post), class: "unclaimed" %>
+      <% elsif @post.artist_id == current_user.id %>
+        You've Claimed It!<br />
+        <%= link_to "Unclaim Junk!", claim_path(@post), class: "claimed" %>
+      <% end %>
+    </div>
+  <% end %>
   <div class="post small-12 columns">
     <div class="post-title">
         <%= @post.title %>
@@ -12,14 +23,6 @@
     <div class="post-description"><%= @post.description %></div>
     <div class="post-address"><%= @post.address %> <a href="http://maps.google.com/?q=<%= @post.address %>" target="_blank" class="fa fa-map-marker" title="View on map"> </a></div>
   </div>
-  <% if current_user.id != @post.donor_id && @post.artist_id == nil %>
-    <div class="claim">
-      <% if @post.artist_id == nil %>
-        <%= link_to "Claim Junk!", claim_path(@post) %>
-      <% elsif @post.artist_id == current_user.id %>
-      <% end %>
-    </div>
-  <% end %>
   <% @images.each do |image| %>
     <div class="post-image">
       <%= image_tag image.pic.url(:medium) %>

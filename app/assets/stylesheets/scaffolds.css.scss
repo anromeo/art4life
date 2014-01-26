@@ -73,7 +73,7 @@ div {
   }
 }
 
-div.row, .alert, .notice {
+.alert, .notice {
 	margin-left: 150px;
 }
 
@@ -110,4 +110,25 @@ a.edit-links:hover{
 .notice {
 	display: none;
 
+}
+.claim a:link,:visited{
+  font-family: "Arial Black", Gadget, sans-serif;
+}
+.claim a:hover{
+  background-color: transparent;
+}
+a.claimed:link{
+  color: #00FF00;  
+}
+a.claimed:visited{
+  color: #00FF00;    
+}
+a.claimed:hover{
+  color: #FF0000;  
+}
+a.unclaimed:link,:visited{
+  color: #FF0000;  
+}
+a.unclaimed:hover{
+  color: #00FF00;  
 }
