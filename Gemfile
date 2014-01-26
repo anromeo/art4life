@@ -12,7 +12,6 @@ gem 'foreman'
 gem 'paperclip-aws'
 gem 'devise'
 gem 'cancan', '1.6.7'
-gem 'thin'
 gem 'simple_form'
 gem 'zurb-foundation'
 gem "paperclip", "~> 3.5"
