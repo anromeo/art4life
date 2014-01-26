@@ -28,4 +28,4 @@ production:
   database: good4art_db
   pool: 5
   username: <%= ENV['db_user'] %>
-  password:
+  password: <%= ENV['db_password'] %>
