@@ -5,11 +5,7 @@
     <tr>
       <th>Title</th>
       <th>Description</th>
-      <th>Price</th>
       <th>Address</th>
-      <th>Artist</th>
-	  <th>Donor</th>
-      <th>Keyword</th>
       <th></th>
       <th></th>
       <th></th>
@@ -21,11 +17,7 @@
       <tr>
         <td><%= post.title %></td>
         <td><%= post.description %></td>
-        <td><%= post.price %></td>
         <td><%= post.address %></td>
-        <td><%= post.artist_id %></td>
-		<td><%= post.donor_id %></td>
-        <td><%= post.keyword %></td>
         <td><%= link_to 'Show', post %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -17,7 +17,8 @@ ActiveRecord::Schema.define(version: 20140125220420) do
   enable_extension "plpgsql"
 
   create_table "images", force: true do |t|
-    t.string   "url"
+    t.string   "pic"
+    t.string   "pic_file_name"
     t.string   "description"
     t.integer  "post_id"
     t.datetime "created_at"
@@ -35,7 +36,8 @@ ActiveRecord::Schema.define(version: 20140125220420) do
     t.string   "description"
     t.float    "price"
     t.string   "address"
-    t.integer  "user_id"
+    t.integer  "donor_id"
+    t.integer  "artist_id"
     t.integer  "keyword"
     t.datetime "created_at"
     t.datetime "updated_at"

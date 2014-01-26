@@ -260,7 +260,7 @@ DEPENDENCIES
   jquery-rails
   launchy
   meta_request
-  paperclip (~> 3.0)
+  paperclip (~> 3.5)
   paperclip-aws
   pg
   pry-debugger

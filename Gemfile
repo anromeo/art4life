@@ -15,7 +15,7 @@ gem 'cancan', '1.6.7'
 gem 'thin'
 gem 'simple_form'
 gem 'zurb-foundation'
-gem "paperclip", "~> 3.0"
+gem "paperclip", "~> 3.5"
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
