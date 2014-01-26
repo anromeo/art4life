@@ -5,6 +5,7 @@ Good4art::Application.routes.draw do
     resources :images, only: [:create, :new]
   end
 
+  get "/about" => "posts#about"
   devise_for :users
   root :to => "posts#index"
 
