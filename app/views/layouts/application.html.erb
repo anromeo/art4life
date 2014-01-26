@@ -3,12 +3,13 @@
 <head>
   <title>Good4Art</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= link_to "Login", new_user_session_path if !current_user &&controller_name != 'sessions' && (devise_mapping.registerable? && controller_name != 'registrations') %>
-  <%= link_to "Sign Out", destroy_user_session_path, method: :delete if current_user %>
+  <%= link_to "Sign In", new_user_session_path if !current_user && controller_name != 'sessions' && (devise_mapping.registerable? && controller_name != 'registrations' %>
+  <%= link_to "Sign Out", destroy_user_session_path, class: 'fa fa-sign-out', method: :delete if current_user %>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
   <%= yield %>
