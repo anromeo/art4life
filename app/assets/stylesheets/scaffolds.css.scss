@@ -73,6 +73,10 @@ div {
   }
 }
 
+div.row, .alert, .notice {
+	margin-left: 150px;
+}
+
 .post {
 	margin: 35px 30px;
 	line-height: 23px;
@@ -87,7 +91,7 @@ div {
 	top: 15px;
 	font-weight: bold;
 	color: #fff;
-	left: 250px;
+	right: 175px;
 }
 
 a.edit-links:link,visited{
@@ -102,4 +106,8 @@ a.edit-links:hover{
   width: 200px;
   height: 200px;
   float: left;
+}
+.notice {
+	display: none;
+
 }
