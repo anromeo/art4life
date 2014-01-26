@@ -37,11 +37,26 @@
         <section class="top-bar-section">
           <ul class="right columns small-4">
             <li>
-              <%= link_to 'New Post', new_post_path, class: 'fa fa-plus top-link-1' %>
+              <a href="/posts/new" class='fa fa-plus top-link-1'>
+                <span class="hide-link">
+                  New Post
+                </span>
+              </a>
             </li>
             <li>
-              <%= link_to "Sign In", (new_user_session_path), class: 'fa fa-sign-in' if !current_user && controller_name != 'sessions' %>
-              <%= link_to "Sign Out", destroy_user_session_path, class: 'fa fa-sign-out', method: :delete if current_user %>
+              <% if !current_user && controller_name != 'sessions' %>
+                <a href="/users/sign_in/" class='fa fa-sign-in'>
+                  <span class="hide-link">
+                    Sign In
+                  </span>
+                </a>
+              <% else %>
+                <a class='nav-link fa fa-sign-out'>
+                  <span class="hide-link">
+                    Sign Out
+                  </span>
+                </a>
+              <% end %>
             </li>
           </ul>
         </section>

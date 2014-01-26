@@ -150,3 +150,8 @@ a.unclaimed:hover{
 }
 .post-image-div{
 }
+@media (max-width: 510px){
+  .hide-link{
+    display: none;
+  }
+}
