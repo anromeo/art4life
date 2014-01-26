@@ -73,7 +73,7 @@ div {
   }
 }
 
-div.row, .alert {
+div.row, .alert, .notice {
 	margin-left: 150px;
 }
 
@@ -91,6 +91,10 @@ div.row, .alert {
 	top: 15px;
 	font-weight: bold;
 	color: #fff;
-	left: 250px;
+	right: 175px;
 }
 
+.notice {
+	display: none;
+
+}
