@@ -7,7 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= link_to "Login", new_user_session_path if !current_user &&controller_name != 'sessions' %>
+  <%= link_to "Login", new_user_session_path if !current_user &&controller_name != 'sessions' && (devise_mapping.registerable? && controller_name != 'registrations') %>
   <%= link_to "Sign Out", destroy_user_session_path, method: :delete if current_user %>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>

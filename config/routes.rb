@@ -1,7 +1,9 @@
 Good4art::Application.routes.draw do
-  resources :posts
 
   resources :images
+  resources :posts do
+    resources :images, only: [:create, :new]
+  end
 
   devise_for :users
   root :to => "posts#index"

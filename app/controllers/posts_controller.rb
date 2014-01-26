@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: :new
+  before_action :authenticate_user!, only: [:new, :edit, :destroy]
+  before_action :keywords, only: [:new, :edit]
 
   # GET /posts
   # GET /posts.json
@@ -11,12 +12,12 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @images = @post.images
   end
 
   # GET /posts/new
   def new
     @post = Post.new
-    @keywords = Keyword.all
   end
 
   # GET /posts/1/edit
@@ -72,5 +73,9 @@ class PostsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
       params.require(:post).permit(:title, :description, :price, :address, :keyword)
+    end
+
+    def get_keywords
+      @keywords = Keyword.all
     end
 end
