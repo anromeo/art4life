@@ -25,7 +25,7 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: good4art_db
+  database: <%= ENV['db_name'] %>
   pool: 5
   username: <%= ENV['db_user'] %>
-  password:
+  password: <%= ENV['db_password'] %>

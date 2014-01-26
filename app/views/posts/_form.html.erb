@@ -27,11 +27,6 @@
     <%= f.label :address %><br>
     <%= f.text_field :address %>
   </div>
-  <div class="field">
-    <% @keywords.each do |key| %>
-      <%= key.name %> <%= f.radio_button :keyword, key.id %>
-    <% end %>
-  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
