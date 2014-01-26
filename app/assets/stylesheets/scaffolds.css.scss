@@ -68,4 +68,8 @@ div {
 
 .post {
 	margin: 35px 30px;
+	line-height: 23px;
+	.post-title {
+		font-weight: bold;
+	}
 }
