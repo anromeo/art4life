@@ -85,13 +85,13 @@ div {
 	}
 }
 
-.top-link-1 {
-	position: absolute;
-	top: 15px;
-	font-weight: bold;
-	color: #fff;
-	right: 175px;
-}
+// .top-link-1 {
+// 	position: absolute;
+// 	top: 15px;
+// 	font-weight: bold;
+// 	color: #fff;
+// 	right: 175px;
+// }
 
 a.edit-links:link,visited{
   color: #0B02B3;
@@ -110,24 +110,41 @@ a.edit-links:hover{
 	display: none;
 
 }
-.claim a:link,:visited{
-  font-family: "Arial Black", Gadget, sans-serif;
+a:link{
+  color: #FF0000;
 }
-.claim a:hover{
-  background-color: transparent;
+a:visited{
+  color: #FF0000;    
+}
+a:hover{
+  color: #FFF;
 }
 a.claimed:link{
   color: #00FF00;  
+  font-family: "Arial Black", Gadget, sans-serif;
 }
 a.claimed:visited{
   color: #00FF00;    
+  font-family: "Arial Black", Gadget, sans-serif;
 }
 a.claimed:hover{
   color: #FF0000;  
+  font-family: "Arial Black", Gadget, sans-serif;
 }
 a.unclaimed:link,:visited{
   color: #FF0000;  
+  font-family: "Arial Black", Gadget, sans-serif;
 }
 a.unclaimed:hover{
   color: #00FF00;  
+  font-family: "Arial Black", Gadget, sans-serif;
+}
+.post-image{
+  width: 100px;
+  height: 100px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  overflow: hidden;
+  margin: 0 15px 0 0;
 }

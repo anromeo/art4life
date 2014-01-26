@@ -13,7 +13,7 @@
   	<!-- Set the viewport width to device width for mobile -->
   	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  	<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+  	<title>GOOD 4 Art <%= content_for?(:title) ? yield(:title) : "" %></title>
 
 	<link href='http://fonts.googleapis.com/css?family=Freckle+Face' rel='stylesheet' type='text/css'>
 
@@ -35,7 +35,10 @@
           </li>
         </ul>
         <section class="top-bar-section">
-          <ul class="right columns small-2">
+          <ul class="right columns small-4">
+            <li>
+              <%= link_to 'New Post', new_post_path, class: 'fa fa-plus top-link-1' %>
+            </li>
             <li>
               <%= link_to "Sign In", (new_user_session_path), class: 'fa fa-sign-in' if !current_user && controller_name != 'sessions' %>
               <%= link_to "Sign Out", destroy_user_session_path, class: 'fa fa-sign-out', method: :delete if current_user %>
