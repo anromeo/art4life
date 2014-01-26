@@ -1,8 +1,16 @@
+<h2 class="subheader">
+  Find Your Treasure
+</h2>
 <% @posts.each do |post| %>
   <div class="post">
     <div class="post-image">
       <% image = post.images.first %>
-      <%= image_tag image.pic.url if image %>
+      <% image = image.pic.url if image  %>
+      <% if image %>
+        <%= image_tag image %>
+      <% else %>
+        <%= image_tag "missing.jpg" %>
+      <% end %>
     </div>
   	<div class="post-title"><%= post.title %></div>
   	<div class="post-description"><%= post.description %></div>
