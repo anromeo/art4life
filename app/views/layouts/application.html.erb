@@ -15,6 +15,8 @@
 
   	<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
 
+	<link href='http://fonts.googleapis.com/css?family=Freckle+Face' rel='stylesheet' type='text/css'>
+
   	<%= stylesheet_link_tag    "application" %>
 	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
   	<%= javascript_include_tag "vendor/custom.modernizr" %>
@@ -28,14 +30,14 @@
         <ul class="title-area">
           <li class="name small-offset-2 columns 2">
             <h1 id="nav-title">
-              <%= image_tag "logo.png", width: "100px" %>
+              <a href="/"><%= image_tag "logo.png", width: "190px" %></a>
             </h1>
           </li>
         </ul>
         <section class="top-bar-section">
           <ul class="right columns small-2">
             <li>
-              <%= link_to "Sign In", (new_user_session_path if !current_user && controller_name != 'sessions'), class: 'fa fa-sign-in' %>
+              <%= link_to "Sign In", new_user_session_path, class: 'fa fa-sign-in' if (!current_user && controller_name != 'sessions')  %>
               <%= link_to "Sign Out", destroy_user_session_path, class: 'fa fa-sign-out', method: :delete if current_user %>
             </li>
           </ul>
