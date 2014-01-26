@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:new, :edit, :destroy]
+  before_action :set_post, only: [:show, :edit, :update, :destroy, :claim]
+  before_action :authenticate_user!, only: [:new, :edit, :destroy, :claim]
 
   # GET /posts
   # GET /posts.json
@@ -49,6 +49,30 @@ class PostsController < ApplicationController
       else
         format.html { render action: 'edit' }
         format.json { render json: @post.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def claim
+    respond_to do |format|
+      if @post.artist_id == nil
+        if @post.update_attribute(:artist_id, current_user.id)
+          format.html { redirect_to @post, notice: "You've claimed this junk." }
+          format.json { head :no_content }
+        else
+          format.html { redirect_to @post, notice: "There was a problem with the system." }
+          format.json { render json: @post.errors, status: :unprocessable_entity }
+        end
+      else
+        if @post.artist_id == current_user.id
+          if @post.update_attribute(:artist_id, nil)
+            format.html { redirect_to @post, notice: "You've unclaimed this junk."}
+          else
+            format.html { redirect_to @post, notice: "There was a problem, and you weren't able to unclaim this junk." }
+          end
+        else
+          format.html { redirect_to @post, notice: "Sorry, someone has already claimed this junk."}
+        end
       end
     end
   end

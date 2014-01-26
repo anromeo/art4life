@@ -7,6 +7,8 @@ Good4art::Application.routes.draw do
 
   devise_for :users
   root :to => "posts#index"
+
+  get "/claim/:id" => "posts#claim", as: :claim
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
