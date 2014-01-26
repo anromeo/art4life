@@ -6,7 +6,7 @@
     <div class="post-image">
 	<%=link_to post do  %>
       <% image = post.images.first %>
-      <% image = image.pic.url if image  %>
+      <% image = image.pic.url(:medium) if image  %>
       <% if image %>
         <%= image_tag image %>
       <% else %>
